@@ -1,7 +1,7 @@
 def read_input():
     inputFormat = input().strip()
     if inputFormat == "F":
-        with open("tests/06.txt") as file:
+        with open("tests/06") as file:
             pattern = file.readline().strip()
             text = file.readline().strip()
         return pattern, text  
@@ -19,6 +19,7 @@ def getHash(data):
     Q = 256
     result = 0
     for i in range(dataLength):
+        #Man liekas, ka B*result vienmeer bus 0, bet es atstasu, ka bija prezentacija
         result = (B * result + ord(data[i])) % Q
     return result
 
